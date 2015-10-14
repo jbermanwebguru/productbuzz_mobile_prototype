@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>ProductBuzz</title>
+        <link rel="stylesheet" href="themes/css/style.css" title="jQTouch">
+        <link href='https://fonts.googleapis.com/css?family=Lato:900,700,400,300' rel='stylesheet' type='text/css' />
+
+        <link rel="stylesheet" href="themes/css/vp.css"/>
+        <link rel="stylesheet" href="themes/css/itabbar.css"/><!--CSS order are important -->
+        <link rel="stylesheet" href="themes/css/style.css"/>
+
+        <script type="text/javascript" src="src/lib/iscroll.js"></script>
+        <script type='text/javascript' src='src/lib/zepto.min.js'></script> 
+        <script type='text/javascript' src='src/jqtouch.min.js'></script>  
+
+        <script type='text/javascript' src='src/jqt.autotitles.min.js'></script>  
+        <script type='text/javascript' src='src/yql.js'></script>  
+
+        <link rel="stylesheet" href="themes/css/add2home.css">
+        <script type="text/javascript" src="src/add2home.js" charset="utf-8"></script>
+
+
+        <script type="text/javascript">
+        var myScroll;
+        function loaded() {
+            setTimeout(function () {
+                myScroll = new iScroll('wrapper');
+            }, 100);
+        }
+        //window.addEventListener('load', loaded, false);
+
+        /* Use this for high compatibility (iDevice + Android)*/
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', setTimeout(function () { loaded(); }, 200), false);
+
+        var mydata = '';
+
+        // Main functions:
+        $(function() {
+
+            $('#single').bind('pageAnimationEnd', function(e, info) {
+
+                if (info.direction == 'in'){
+                //$("#postcat").empty();
+                    if (myScroll) {
+                        myScroll.destroy();
+                        myScroll = null;
+                        //alert('destroy iscroll')
+                    }
+
+                    if ($('div#' + e.target.id + ' #wrapper').get(0)) {
+                        setTimeout(function() {
+                            myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
+                        }, 0);
+                    }
+                }
+                
+            }); //pageAnimationEnd
+        });
+
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQTouch({
+                icon: 'jqtouch.png',
+                icon4: 'jqtouch4.png',
+                addGlossToIcon: false,
+                statusBar: 'black-translucent',
+                preloadImages: []
+            });
+        </script>
+    </head>
+    <body>
+        <div id="jqt">
+            <!-- #home-->
+            <div id="home" class="current">
+                <div class="toolbar">
+                    <a href="#" class="btn-menu"></a>
+                    <img class="logo" src="images/logo.svg"/>
+                    <a href="#" class="profile-pic">
+                        <span class="badge">4</span>
+                        <img src="images/fpo/profile-pic.jpg"/>
+                    </a>
+                </div>
+                
+                <div id="wrapper">
+                    <div class="scroller">
+                        <ul class="rounded">
+                            <li class="arrow"><a href="home.html">Home<small class="counter">5</small></a> </li>
+                            <li class="arrow"><a href="answer.php">Answer<small class="counter">5</small></a> </li>
+                            <li class="arrow"><a href="ask.html">Ask<small class="counter">5</small></a> </li>
+                            <li class="arrow"><a href="read.html">Read<small class="counter">5</small></a> </li>
+                            <li class="arrow"><a href="surveys.html">Surveys<small class="counter">5</small></a> </li>
+                            <li class="arrow"><a href="offers.html">Offers<small class="counter">5</small></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End #home -->
+        </div>
+        <div id="loading"><p><img src="images/loading.gif" /></p></div>
+
+        <nav id="tabbar">
+            <ul>
+                <li><a href="answer.php" class="flip"><strong>Answer</strong><div class="answer"></div></a></li>    
+                <li><a href="ask.html" class="flip"><strong>Ask</strong><div class="ask"></div></a></li>
+                <li><a href="read.html" class="flip"><strong>Read</strong><div class="read"></div></a></li>
+                <li><a href="surveys.html" class="flip"><strong>Surveys</strong><div class="surveys"></div></a></li>
+                <li><a href="offers.html" class="flip"><!--<small class="badge right">3</small>--><strong>Offers</strong><div class="offers"></div></a></li>
+            </ul>
+        </nav>
+        <script type='text/javascript' src='src/itabbar.js'></script> 
+        <script type='text/javascript' src='src/fullscreen.js'></script>  
+    </body>
+</html>

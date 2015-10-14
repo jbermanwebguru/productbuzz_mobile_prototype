@@ -1,0 +1,41 @@
+
+                <div id="ask"> <!-- this div ID has to be unique for each page for jqtouch to work -->
+                    <div id="wrapper">
+                        <div class="scroller">
+                        
+                            <div class="crumb">
+                                <a href="#" class="back" onclick="jQT.goBack();">Back</a>
+
+                                <a href="#" class="button next" id="submit-button">Submit</a>
+                            </div>
+
+                            <ul class="rounded less-padding ask-prompt">
+                                <li>
+                                    <div class="time">Now</div>
+                                    <a href="#" class="help"><img src="images/icon-help.png"/></a>
+                                    <a href="profile.html" class="profile-pic small"><img src="images/fpo/profile-pic-01.jpg"/></a>
+                                    <span class="profile-name small">John Berman asks,</span>
+                                    <div class="rounded shadow-inset np">
+                                        <textarea rows="40" cols="5" placeholder="Describe your problem..."></textarea>
+                                        <div class="toolbar">
+                                            <div class="file-upload">
+                                                <img src="images/icon-camera.png"/>
+                                                <input type="file" name="uploaded-file" id="uploaded-file"/>
+                                            </div>
+                                            <div class="show-select-topic">
+                                                <a href="#">Kids</a> | 
+                                                <a href="#">Choose a category &#9656;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <script>
+					$(function() {
+					   console.log("page loaded");
+					   pageLoaded("ask");
+					});
+				</script>

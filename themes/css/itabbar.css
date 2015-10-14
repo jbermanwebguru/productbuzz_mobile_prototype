@@ -1,0 +1,209 @@
+/* iTabbar CSS Start here */
+#tabbar {
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-size:12px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+  bottom: -80px;
+  border-top: 1px rgba(255,255,255,0.3) solid;
+  /*display: none;   build the tabbar off screen */
+  height: 80px  !important;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 100 !important;
+  -webkit-transition:bottom 0.5s ease-in-out;
+  transition:bottom 0.5s ease-in-out;
+  /*-webkit-box-shadow: 0 -0.05em 0 rgba(0,0,0,0.9); */
+  -moz-box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+  box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+}
+#tabbar.show {
+  bottom: 0;
+}
+
+#tabbar ul{
+  width: 100%;
+}
+
+#tabbar li{
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 20%;
+  display:block;
+  float:left; 
+  min-width: 3.33333em;
+  border-top: solid 1px #dbdbda;
+  border-bottom: solid 1px #dbdbda;
+  border-right: solid 1px #dbdbda;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+#tabbar li:last-child{
+  border-right: none;
+}
+
+#tabbar .badge {
+  border: .25em solid #fff;
+  color: #fff;
+  display: block;
+  font: bold .90em "Helvetica Neue", Helvetica;
+  height: 1.2em;
+  line-height: 1.2em;
+  min-width: .5em;
+  overflow: hidden;
+  padding: .125em .375em;
+  position: absolute;
+  text-shadow: 0px -1em 1em rgba(0, 0, 0, 0.3);
+  top: 3px;
+  width: auto;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-box-shadow: 0px .1875em .3125em rgba(0, 0, 0, 1.0);
+  -webkit-border-radius: .9125em;
+}
+
+#tabbar .badge.left {
+  left: auto;
+  right: 54%;
+}
+
+#tabbar .badge.right {
+  left: 54%;
+  right: auto;
+}
+
+#tabbar a {
+  -webkit-box-flex: 1;
+  bottom: 2px;
+  display: inline-block;
+  height: 80px;
+  position: relative;
+  top: 0;
+  vertical-align: top;
+  width: 100%;
+  text-decoration: none;
+  border-left: solid 1px #fff;
+  border-right: solid 1px #fff;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+#tabbar a > strong {
+  bottom: 6px;
+  color: #735a92;
+  font: 1em "Lato", "Helvetica Neue", Helvetica;
+  line-height: 1em;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+#tabbar a.current{
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#735a92), color-stop(100%,#624d7b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #735a92 0%,#624d7b 100%); /* Chrome10+,Safari5.1+ */
+}
+
+#tabbar a.current> strong {
+  color: #FFF;
+}
+
+#tabbar a.current> .icon {
+  background-color: #fff;
+}
+
+#tabbar .icon {
+  margin-top: 8px;
+  background-color: #735a92;
+  width: 100%;
+  height: 34px;  
+  -webkit-mask-size: 34px;
+  -webkit-mask-position: center top;
+  -webkit-mask-repeat: no-repeat; 
+}
+
+#tabbar .problems .icon {
+  -webkit-mask-image: url(../../images/nav/problems.png);
+}
+
+#tabbar .solutions .icon {
+  -webkit-mask-image: url(../../images/nav/solutions.png);
+}
+
+#tabbar .offers .icon {
+  -webkit-mask-image: url(../../images/nav/offers.png);
+}
+
+/* FIX BLNK */
+.slide-back.in {
+
+  -webkit-animation-name: slideLeftIn; z-index: 10;
+}
+.slide-back.out {
+
+  -webkit-animation-name: slideRightOut; z-index: 0;
+}
+.slide-back.in.reverse {
+
+  -webkit-animation-name: slideRightIn; z-index: 10;
+}
+.slide-back.out.reverse {
+
+  -webkit-animation-name: slideLeftOut; z-index: 0;
+}
+@-webkit-keyframes slideRightIn {
+
+  from { -webkit-transform: translateX(100%); } to { -webkit-transform: translateX(0); 
+  }
+  @-webkit-keyframes slideLeftIn {
+
+    from { -webkit-transform: translateX(-100%); } to { -webkit-transform: translateX(0); 
+    }
+    @-webkit-keyframes slideLeftOut {
+
+      from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(-100%); 
+      }
+      @-webkit-keyframes slideRightOut {
+
+        from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100%); 
+        }
+
+
+/*
+#tabbar h1{position:absolute;overflow:hidden;left:50%;bottom:12px;margin:1px 0 0 -75px;width:150px;font-size:20px;font-weight:bold;line-height:1em;text-align:center;text-overflow:ellipsis;white-space:nowrap;color:white;text-shadow:#161717 0 -1px 0}
+*/
+
+
+/**
+#scroller {
+	position:absolute; z-index:1;
+
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#scroller li {
+	padding:0 10px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	background-color:#fafafa;
+	font-size:14px;
+}
+**/

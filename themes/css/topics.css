@@ -1,0 +1,96 @@
+#topics {
+	position: absolute;
+	top: 43px;
+	width: 100%;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	background: #e6e6e6;
+	z-index: 20;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition-timing-function: ease-out;
+	z-index: 200;
+}
+#topics.show {
+	height: 100%;
+}
+#topics > ul {
+	height: 100%;
+	width: 135px;
+	background: #fff;
+	overflow-y: auto;
+	/*-webkit-overflow-scrolling: touch;*/
+}
+#topics ul,
+#topics ul li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#topics > ul > li > a {
+	position: relative;
+	z-index: 100;
+	border-right: 1px dotted #a8a8a8;
+}
+#topics > ul > li:last-child > a {
+	height: 400px;
+}
+#topics > ul > li > ul > li > a {
+	position: relative;
+	z-index: 20;
+}
+#topics ul li a {
+	display: block;
+	font-size: 0.65em;
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+	color: #735a92;
+	text-decoration: none;
+	font-size: 1.5em;
+	line-height: 2em;
+	height: 2em;
+	width: 120px;
+	background: #fff;
+	border-bottom: 1px dotted #a8a8a8;
+	padding-left: 15px;
+}
+#topics ul li.selected > a {
+	background: #735a92;
+	color: #fff;
+}
+#topics ul li:last-child a {
+	border-bottom: none;
+}
+#topics ul li ul {
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	padding-top: 0.5em;
+	background: #e6e6e6;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition-timing-function: ease-out;
+}
+#topics.show ul li ul {
+}
+#topics ul li ul li a {
+	font-size: 1.1em;
+	line-height: 2em;
+	height: 2em;
+	border: none;
+	color: #735a92;
+	background: #e6e6e6;
+}
+#topics ul li ul li a:active,
+#topics ul li ul li.selected > a {
+	background: #e6e6e6;
+	color: #666;
+	font-weight: 500;
+}
+#topics.show ul li.selected ul {
+	left: 135px;
+}
